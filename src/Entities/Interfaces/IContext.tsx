@@ -7,8 +7,6 @@ export default interface IContext {
   setProject: Dispatch<SetStateAction<IProject[] | undefined>>;
   tasks: ITask[] | undefined;
   setTask: Dispatch<SetStateAction<ITask[] | undefined>>
-  concludedPercent: number;
-  setConcludedPercent: Dispatch<SetStateAction<number>>;
   presentProject: IProject | undefined;
   setPresentProject: Dispatch<SetStateAction<IProject | undefined>>;
 }
