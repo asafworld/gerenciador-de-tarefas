@@ -1,0 +1,90 @@
+.display-subtasks-article {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.no-subtask {
+  text-align: center;
+  color: #001e1d;
+}
+
+.display-subtasks-pending-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.display-subtasks-pending-section h3 {
+  text-align: center;
+}
+
+.display-subtasks-pending-li {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #001e1d;
+  color: #fffffe;
+  margin-bottom: 10px;
+}
+
+.display-subtasks-pending-li li {
+  list-style: none;
+}
+
+.display-subtasks-pending-li:hover {
+  font-weight: bolder;
+}
+
+.display-subtasks-concluded-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.display-subtasks-concluded-section h3 {
+  text-align: center;
+}
+
+
+.display-subtasks-concluded-li {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #001e1d;
+  color: #fffffe;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.display-subtasks-concluded-li li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.trash-icon {
+  margin-right: 10px;
+}
+
+ul div {
+  margin-right: 35px;
+}
+
+@media screen and (max-width: 950px) {
+  .display-subtasks-article {
+    flex-direction: column;
+  }
+
+  .display-subtasks-pending-section {
+    width: 50%;
+  }
+}
