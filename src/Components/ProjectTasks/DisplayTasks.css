@@ -1,0 +1,62 @@
+.display-tasks-article {
+  margin-top: 50px;
+}
+
+.no-task-saved {
+  text-align: center;
+  color: #001e1d;
+}
+
+.display-tasks-section {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.display-tasks-div {
+  width: 20%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  background-color: #004643;
+}
+
+.display-tasks-div a {
+  color: #fffffe;
+  text-decoration: none;
+}
+
+.display-tasks-div h2 {
+  margin-top: 10px;
+}
+
+.display-tasks-div:hover {
+  border: 2px solid #f9bc60;
+}
+
+.no-pointers {
+  pointer-events: none;
+}
+
+.remove-task-button {
+  background-color: #f9bc60;
+  color: #001e1d;
+  border-color: #f9bc60;
+}
+
+@media screen and (max-width: 950px) {
+  .display-tasks-section {
+    flex-direction: column;
+  }
+
+  .display-tasks-div {
+    width: 60%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
