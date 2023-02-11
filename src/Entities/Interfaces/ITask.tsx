@@ -1,13 +1,13 @@
 export default interface ITask {
-  projectId: number;
   taskId: number;
-  task: string;
+  taskLabel: string;
+  taskDescription: string;
   taskOwner: string;
-  createdAt: Date | null;
-  finishedAt: Date | null;
+  createdAt: string | null;
+  finishedAt: string | null;
   concluded: boolean;
   subtasks: {
-    toDo: string[],
-    concluded: string[],
+    toDo: string[] | null,
+    concluded: string[] | null,
   }
 }
