@@ -1,7 +1,11 @@
+import ITask from './ITask';
+
 export default interface IProject {
-  projectLabel: string;
-  description: string | undefined;
   projectId: number;
+  projectLabel: string;
+  description: string;
+  finishedAt: string;
+  tasks: ITask[] | null;
   percent: number;
   concluded: boolean;
 }
