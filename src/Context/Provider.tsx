@@ -3,42 +3,33 @@ import propTypes from 'prop-types';
 import ManagerContext from "./ManagerContext";
 import IContext from "../Entities/Interfaces/IContext";
 import IProject from "../Entities/Interfaces/IProject";
-import ITask from "../Entities/Interfaces/ITask";
+import getLocalStorage from "../utils/LocalStorage/GetLocalStorage";
+import saveLocalStorage from "../utils/LocalStorage/SaveLocalStorage";
 
 function ManagerProvider({ children }: { children: React.ReactNode }) {
   const [projects, setProject] = useState<IProject[] | undefined>();
-  const [tasks, setTask] = useState<ITask[] | undefined>();
   const [presentProject, setPresentProject] = useState<IProject | undefined>();
+  const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
   const value: IContext = {
     projects,
     setProject,
-    tasks,
-    setTask,
     presentProject,
-    setPresentProject
+    setPresentProject,
+    errorMessage,
+    setErrorMessage
   }
 
   useEffect(() => {
-    const localState = localStorage.getItem('state');
-    if (localState) {
-      const parsedState = JSON.parse(localState);
-      setProject(parsedState.projects)
-      setTask(parsedState.tasks)
-      setPresentProject(parsedState.presentProject)
-    }
-
+    setProject(getLocalStorage('projects'));
+    setPresentProject(getLocalStorage('presentProject'))
+    setErrorMessage(undefined)
   }, [])
 
   useEffect(() => {
-    const state = {
-      projects,
-      tasks,
-      presentProject
-    };
-    const stringfiedState = JSON.stringify(state);
-    localStorage.setItem('state', stringfiedState)
-  }, [projects, tasks, presentProject])
+    if (projects) saveLocalStorage('projects', projects)
+    if (presentProject) saveLocalStorage('presentProject', presentProject)
+  }, [projects, presentProject])
   
   return(
     <ManagerContext.Provider value={ value }>
