@@ -72,6 +72,10 @@ Aqui temos uma divisão de dois arquivos e funções, uma para capturar as infor
 
 A função *getTheDate()* tem a simples função de retornar a presente data. É utilizada para capturar a data de encerramento de tarefas e projetos.
 
+#### Percentage
+
+A função *getPercentage()* realiza o calculo de tarefas já concluídas dentro do número de tarefas totais. Já retorna uma string com a informação a ser renderizada na página.
+
 # INSTALAÇÃO: 
 
 Uma vez com o projeto em sua máquiva, realize o NPM INSTALL em seu terminal antes de utilizar a aplicação. 
