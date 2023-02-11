@@ -1,0 +1,60 @@
+.create-project-article {
+  width: 100%;
+}
+
+.create-project-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.create-project-input, .create-project-textarea {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #004643;
+  border-color: #004643;
+  border-radius: 7px;
+  place-content: #fffffe;
+  color: #fffffe;
+}
+
+.create-project-input {
+  padding: 10px;
+}
+
+.create-project-textarea {
+  padding: 20px;
+}
+
+.create-project-input::placeholder, .create-project-textarea::placeholder {
+  color:  #fffffe;
+  opacity: 1;
+}
+
+.create-project-div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-project-button {
+  background-color: #f9bc60;
+  color: #001e1d;
+  border-color: #f9bc60;
+  margin-top: 20px;
+  width: 10%;
+  height: 10%;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .create-project-button {
+    width: 50%;
+  }
+}
