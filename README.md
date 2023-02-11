@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Gerenciador de Tarefas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### Projeto desenvolvido por Gabriel Asaf. 
+##### Com o Gerenciador de Tarefas você pode criar tarefas e suas subtarefas para cada projeto iniciado.
 
-## Available Scripts
+# ÍNDICE
 
-In the project directory, you can run:
+<!--ts-->
+   * [Organização do Repositório](#organização-do-repositório)
+      * [Pastas](#pastas)
+   * [Páginas e suas Funcionalidades](#páginas-e-suas-funcionalidades)
+   * [Funções Helpers](#funções-helpers)
+   * [Instalação](#instalacao)
+   * [Como usar](#como-usar)
+<!--te-->
 
-### `npm start`
+# ORGANIZAÇÃO DO REPOSITÓRIO: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Todos os arquivos importantes para o desempenho da aplicação se encontram na pasta "src".
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## PASTAS:
 
-### `npm test`
+Context -> Pasta destinada aos arquivos de criação do Contexto da aplicação (ContextAPI), bem como seu componente Provider.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Entities -> Arquivo com as entidades que vão tipar os objetos veiculados na aplicação (via ContextAPI e LocalStorage)
 
-### `npm run build`
+Pages -> Pasta destinada a todas as três páginas renderizadas: Vizualização e criação de projetos (Pages/Projects); Vizualiação das informações do projeto selecionado, bem como criação e vizualização de tarefas (Pages/ProjectTasks); Vizualiação e criação de sub-tarefas (Pages/Task). 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Components -> Pasta destinada a todos os componentes renderizados nas páginas. Está dividida por funcionalidades: Criação e Exibição de Projetos, Tarefas e SubTarefas, bem como o Header. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+utils -> Pasta destinada as funções que atuam como helpers através do código. Captura e inserção de dados no LocalStorage. Captura da data atual e cáculo da porcentagem de conclusão de cada projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# PÁGINAS E SUAS FUNCIONALIDADES
 
-### `npm run eject`
+#### /  (Página Inicial)
+Página que renderiza duas seções: Inserção de um novo projeto e a listagem daqueles já existentes.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Não será possível criar um novo projeto caso as informações não estejam preenchidas.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Uma vez que você cria um projeto, o aplicativo lhe redireciona automaticamente para a página do projeto, tornando aquele o projeto atual.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para selecionar um projeto, basta apenas clicar no nome do card respectivo. Para excluir o projeto, basta apenas clicar em "Excluir".
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### /project/:id (Página do projeto atual)
+Página que renderiza três seções: Informações do projeto, inserção de uma nova tarefa e a listagem daquelas já existentes.
 
-## Learn More
+Aqui também não será possível criar uma tarefa sem que os campos estejam devidamente preenchidos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para acessar o conteúdo da Tarefa, basta apenas clicar nas informações preenchidas em seu card. No caso do usuário desejar excluí-la, deve apenas clicar em "Excluir".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Uma vez que o usuário marque o projeto como concluído, não será possível criar novas tarefas.
+
+#### /task/:id
+Página que renderiza três seções: Informações da presente tarefa, inserção de subtarefas e a listagem daquelas já existentes.
+
+Uma vez que o campo de identificação da nova subtarefa não está preenchido, não será possível criá-la. 
+
+Na seção de listagem, temos duas listas: Uma lista para subtarefas pendentes e outra para concluídas. Em ambas é possível excluir subtarefas indesejadas. Para concluir uma subtarefa pendente o usuário deve clicar o íncone imediatamente a sua esquerda.
+
+Dado que o usuário marque a tarefa como concluída, não será possível adicionar novas subtarefas.
+
+
+# FUNÇÕES HELPERS
+
+Funções que auxiliam a aplicação em diferentes componentes. Estão localizadas na pasta *./utils*.
+
+#### Local Storage
+
+Aqui temos uma divisão de dois arquivos e funções, uma para capturar as informações do LocalStorage (*getLocalStorage*) e outra para salvar (*saveLocalStorage*).
+
+#### Data
+
+A função *getTheDate()* tem a simples função de retornar a presente data. É utilizada para capturar a data de encerramento de tarefas e projetos.
+
+# INSTALAÇÃO: 
+
+Uma vez com o projeto em sua máquiva, realize o NPM INSTALL em seu terminal antes de utilizar a aplicação. 
+O projeto irá falhar caso isso não seja feito.
+
+```
+npm install
+```
+
+# COMO USAR
+
+Excute a aplicação via NPM START para ter acesso ao seu funcionamento em seu LocalHost.
+____________________________________________________________________________
+
+Project developed by Gabriel Asaf (asafworld)
