@@ -1,0 +1,65 @@
+.create-subtask-article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtask-info-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.subtask-info-div {
+  display: flex;
+  justify-content: space-around;
+  color: #0f3433;
+}
+
+.create-subtask-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-subtask-input {
+  width: 50%;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #004643;
+  border-color: #004643;
+  border-radius: 7px;
+  place-content: #fffffe;
+  color: #fffffe;
+}
+
+.create-subtask-input::placeholder, .create-subtask-textarea::placeholder {
+  color:  #fffffe;
+  opacity: 1;
+}
+
+.create-subtask-button {
+  background-color: #f9bc60;
+  color: #001e1d;
+  border-color: #f9bc60;
+  margin-top: 20px;
+  width: 10%;
+  height: 10%;
+}
+
+@media screen and (max-width: 950px) {
+  .subtask-info-div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .create-subtask-button {
+    width: 50%;
+  }
+}
