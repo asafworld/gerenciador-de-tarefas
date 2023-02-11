@@ -1,0 +1,28 @@
+.project-info-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  color: #0f3433;
+}
+
+.project-info-divs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conclude-project-button {
+  background-color: #f9bc60;
+  color: #001e1d;
+  border-color: #f9bc60;
+}
+
+@media screen and (max-width: 950px) {
+  .project-info-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
