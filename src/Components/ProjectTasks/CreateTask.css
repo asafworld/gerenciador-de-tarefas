@@ -1,0 +1,37 @@
+.create-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-task-input, .create-task-textarea {
+  width: 50%;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #004643;
+  border-color: #004643;
+  border-radius: 7px;
+  place-content: #fffffe;
+  color: #fffffe;
+}
+
+.create-task-input::placeholder, .create-task-textarea::placeholder {
+  color:  #fffffe;
+  opacity: 1;
+}
+
+.create-task-button {
+  background-color: #f9bc60;
+  color: #001e1d;
+  border-color: #f9bc60;
+  margin-top: 20px;
+  width: 10%;
+  height: 10%;
+}
+
+@media screen and (max-width: 950px) {
+  .create-task-button {
+    width: 50%;
+  }
+}
